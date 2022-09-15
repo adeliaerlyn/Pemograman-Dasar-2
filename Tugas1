@@ -10,9 +10,9 @@
 
 <p align="justify">Program komputer saat ini sangat canggih sehingga sulit dipercaya bahwa mereka terdiri dari instruksi yang sangat primitif. Instruksi tipikal mungkin satu dari berikut ini: </p>
 
-* Letakkan titik merah pada posisi layar tertentu.
-* Tambahkan dua angka.
-* Jika nilai ini negatif, lanjutkan program pada instruksi tertentu.
+- Letakkan titik merah pada posisi layar tertentu.
+- Tambahkan dua angka.
+- Jika nilai ini negatif, lanjutkan program pada instruksi tertentu.
 
 <p align="justify">Pengguna komputer memiliki ilusi interaksi yang lancar karena sebuah program berisi sejumlah besar instruksi semacam itu, dan karena komputer dapat mengeksekusinya di kecepatan luar biasa. </p>
 
@@ -96,7 +96,6 @@ Langkah1 Mulai lingkungan pengembangan Java.
 
 <p align="justify">Sistem komputer sangat berbeda dalam hal ini. Pada banyak komputer terdapat lingkungan pengembangan terintegrasi di mana Anda dapat menulis dan menguji program Anda. Di komputerAnda pertama kali meluncurkan editor, sebuah program yang berfungsi seperti pengolah kata, di mana Anda dapat memasukkan instruksi Java Anda; Anda kemudian membuka jendela konsol dan ketik perintah untuk menjalankan program Anda. Anda perlu mencari tahu bagaimana memulai dengan lingkungan Anda.</p>
 
-L 
 
 <p align="justify">Pilihan tradisional untuk program pertama dalam bahasa pemrograman baru adalah program yang menampilkan sapaan sederhana: “Halo, Dunia!”. Mari kita ikuti tradisi itu. Inilah "Hello, World!" program di java:</p>
 
@@ -380,15 +379,174 @@ jawaban, itu harus mengikuti urutan langkah-langkah yang</p>
 
 Pertimbangkan masalah investasi berikut:
 
-<p align="justify">Anda memasukkan 10.000 ke dalam rekening bank yang menghasilkan bunga 5 persen per tahun. Berapa banyak tahun yang diperlukan agar saldo akun menjadi dua kali lipat dari aslinya?</p>
+<p align="justify">Anda memasukkan $10.000 ke dalam rekening bank yang menghasilkan bunga 5 persen per tahun. Berapa banyak tahun yang diperlukan agar saldo akun menjadi dua kali lipat dari aslinya?</p>
 
 <p align="justify">Bisakah Anda memecahkan masalah ini dengan tangan? Tentu, Anda bisa. Anda mengetahui keseimbangannya sebagai berikut:</p>
 
+![Figure]()
 
+<p align="justify">Anda terus berjalan sampai saldo setidaknya $20.000. Kemudian angka terakhir di tahun inikolom adalah jawabannya.</p>
 
+<p align="justify">Tentu saja, melakukan perhitungan ini sangat membosankan bagi Anda atau adik laki-laki Anda. Tetapi komputer sangat pandai melakukan perhitungan berulang dengan cepat dan tanpa cacat. Yang penting bagi komputer adalah deskripsi langkah-langkah untuk menemukan solusi. Setiap langkah harus jelas dan tidak ambigu, tidak memerlukan tebak-tebakan. Berikut adalah deskripsi seperti itu:</p>
 
+Setel tahun ke 0, saldo ke 10.000.
 
+![Figure]()
 
+Ketika saldo kurang dari $20,000
+Tambahkan 1 ke tabel tahun.
 
+Tetapkan bunga ke saldo x 0,05 (yaitu, bunga 5 persen).
 
+Tambahkan bunga ke saldo
 
+![Figure]()
+
+Laporan tahun sebagai jawabannya.
+
+<p align="justify">Langkah-langkah ini termasuk dalam bahasa yang belum dapat dipahami oleh komputer, tapi kamu akan segera belajar bagaimana merumuskannya dalam Java. Deskripsi ini disebut dengan pseudocode. Kami membahas aturan untuk menulis pseudocode di bagian selanjutnya.</p><br>
+
+### **1.7.3 Pseudocode**
+
+<br>
+
+<p align="justify">Tidak ada persyaratan ketat untuk pseudocode karena dibaca oleh manusia, bukan program komputer. Berikut adalah jenis-jenis pernyataan pseudocode dan bagaimana kita akan menggunakan penerapannya dalam buku ini:</p>
+
+* <p align="justify">Gunakan pernyataan seperti berikut ini untuk menjelaskan bagaimana suatu nilai ditetapkan atau diubah:</p>
+```
+biaya total = harga beli + biaya operasi
+Kalikan nilai saldo dengan 1,05.
+Hapus karakter pertama dan terakhir dari kata.
+```
+
+* <p align="justify">Jelaskan keputusan dan pengulangan sebagai berikut:</p>
+```
+Jika total biaya 1 < total biaya 2
+Ketika saldo kurang dari $20,000
+Untuk setiap gambar dalam urutan
+Gunakan lekukan untuk menunjukkan pernyataan mana yang harus dipilih atau diulang:
+Untuk setiap mobil
+biaya operasi = 10 x biaya bahan bakar tahunan
+biaya total = harga beli + biaya operasi
+Di sini, lekukan menunjukkan bahwa kedua pernyataan harus dieksekusi untuk setiap mobil.
+```
+* <p align="justify">•	Tunjukkan hasil dengan pernyataan seperti:</p>
+```
+Pilih mobil1.
+Laporkan tahun sebagai jawabannya.
+```
+
+<br>
+
+### **1.7.4 Dari Algoritma Program**
+
+<br>
+
+<p align="justify">Di Bagian 1.7.2, kami mengembangkan pseudocode untuk menemukan berapa lama waktu yang dibutuhkan untuk menggandakan investasi. Mari kita periksa kembali bahwa pseudocode mewakili suatu algoritma itu . adalah bahwa pseudocode itu jelas, dapat dieksekusi, dan diakhiri.</p>
+
+<p align="justify">Di Bagian 1.7.2, kami mengembangkan pseudocode untuk menemukan berapa lama waktu yang dibutuhkan untuk menggandakan investasi. Mari kita periksa kembali bahwa pseudocode mewakili suatu algoritma itu . adalah bahwa pseudocode itu jelas, dapat dieksekusi, dan diakhiri.</p>
+
+<p align="justify">Pseudocode kami jelas. Ini hanya memberi tahu cara memperbarui nilai di setiap langkah. Pseudocode dapat dieksekusi karena kami menggunakan tingkat bunga tetap. Apakah kami mengatakan untuk menggunakan tingkat bunga aktual yang akan dibebankan di tahun-tahun mendatang, dan bukan tingkat bunga tetap 5 persen per tahun, instruksi tidak akan dapat dieksekusi. Tidak ada jalan bagi siapa pun untuk mengetahui berapa tingkat bunga di masa depan. Ini membutuhkan sedikit berpikir untuk melihat bahwa langkah-langkahnya berakhir: Dengan setiap langkah, keseimbangan naik setidaknya $ 500, jadi akhirnya harus mencapai $ 20.000.</p>
+
+<p align="justify">Oleh karena itu, kami telah menemukan algoritme untuk menyelesaikan masalah investasi kami, dan kami tahu kami dapat menemukan solusinya dengan memprogram komputer. Keberadaan algoritma adalah prasyarat penting untuk memprogram tugas. Anda harus terlebih dahulu algoritma untuk tugas anda sebelum Anda memulai pemrograman (lihat Angka 8). Dalam bab-bab berikutnya, Anda akan mempelajari cara mengekspresikan algoritme dalam bahasa Java.</p>
+<br>
+
+### **BAGAIMANA 1.1**
+
+<br>
+
+#### **Menjelaskan algoritma dengan Pseudocode**
+
+<br>
+
+<p align="justify">Ini adalah yang pertama dari banyak cara bagian dalam buku ini yang memberikan Anda langkah-demi-langkah prosedur untuk melaksanakan tugas-tugas penting dalam mengembangkan program komputer.</p>
+
+<p align="justify">Sebelum Anda siap untuk menulis sebuah program di Java, Anda perlu mengembangkan metode algorithma untuk tiba di solusi untuk masalah tertentu menggambarkan algoritma di pseudocode urutan langkah-langkah yang tepat dirumuskan dalam bahasa Inggris untuk menggambarkan, kami akan merancang sebuah algoritma untuk masalah ini:</p>
+
+<p align="justify"><b>Pernyataan masalah</b> Anda memiliki pilihan untuk membeli salah satu dari dua mobil. Satu lebih hemat bahan bakar daripada yang lain, tetapi juga lebih mahal. </p>
+
+<p align="justify">Anda tahu harga dan efisiensi bahan bakar (dalam mil per galon, mpg) dari kedua mobil. Anda berencana untuk menyimpan mobil selama sepuluh tahun. Asumsikan harga $4 per galon gas dan penggunaan 15.000 mil per tahun. Anda akan membayar tunai untuk mobil dan tidak khawatir tentang biaya pembiayaan. Mobil mana yang lebih baik?</p><br>
+
+**Langkah 1** Tentukan input dan output. 
+
+<br>
+
+Dalam contoh soal kami, kami memiliki input ini:
+
+* <p align="justify"><b>Harga beli1</b> dan <b>efisiensi bahan bakar1</b>, harga dan efisiensi bahan bakar (dalam mpg) mobil pertama.</p>
+* <p align="justify"><b>Harga beli2</b> dan <b>efisiensi bahan bakar2</b>, harga dan efisiensi bahan bakar mobil kedua.</p>
+
+<p align="justify">Kami hanya ingin tahu mobil mana yang lebih baik dibeli. Itu adalah keluaran (output) yang diinginkan.</p><br>
+
+**Langkah 2** Memecah masalah menjadi tugas-tugas yang lebih kecil. 
+
+<br>
+
+<p align="justify">Untuk setiap mobil, kita perlu mengetahui total biaya mengemudinya. Mari kita lakukan perhitungan ini secara terpisah untuk setiap mobil. Setelah kita memiliki total biaya untuk setiap mobil, kita dapat memutuskan mobil mana yang lebih baik.</p>
+
+<p align="justify">Total biaya untuk setiap mobil adalah harga <b>beli + biaya operasional</b>.</p>
+
+<p align="justify">Kami mengasumsikan penggunaan konstan dan harga gas selama sepuluh tahun, sehingga biaya operasi tergantung pada biaya mengemudi mobil selama satu tahun.</p>
+
+<p align="justify">Biaya operasi adalah <b>10 x biaya bahan bakar tahunan</b>.</p>
+
+<p align="justify">Biaya bahan bakar tahunan adalah <b>harga per galon x bahan bakar tahunan yang dikonsumsi</b>.</p>
+
+<p align="justify">Bahan bakar tahunan yang dikonsumsi adalah <b>jarak tempuh tahunan / efisiensi bahan bakar</b>. Misalnya, jika Anda mengendarai mobil sejauh 15.000 mil dan efisiensi bahan bakarnya 15 mil/galon, mobil tersebut mengkonsumsi 1.000 galon.</p><br>
+
+**Langkah 3** Jelaskan setiap subtugas dalam pseudocode.
+
+<br>
+
+<p align="justify">Dalam uraian Anda, atur langkah-langkahnya sehingga setiap nilai antara dihitung sebelum diperlukan dalam perhitungan lain. Misalnya, daftar langkah:</p>
+
+<p align="justify"><b>biaya total = harga pembelian + biaya operasi</b></p>
+
+<p align="justify">Setelah Anda menghitung <b>biaya operasi</b>.</p>
+
+<p align="justify">Berikut adalah algoritma untuk memutuskan mobil mana yang akan dibeli:
+Untuk setiap mobil, hitung total biaya sebagai berikut: </p>
+```
+konsumsi bahan bakar tahunan = jarak tempuh tahunan / efisiensi bahan bakar 
+biaya bahan bakar tahunan = harga per galon x konsumsi bahan bakar tahunan 
+biaya operasional = 10 x biaya bahan bakar tahunan 
+total biaya = harga beli + biaya operasional 
+```
+
+<p align="justify">Jika total biaya mobil1 < total biaya mobil2</p>
+```
+Pilih mobil1. 
+Lainnya
+Pilih mobil2.
+```
+
+<br>
+
+**Langkah 4** Uji pseudocode Anda dengan mengerjakan soal.
+
+<br>
+
+<p align="justify">Kami akan menggunakan nilai sampel ini: </p>
+```
+Mobil 1: $25.000, 50 mil/galon 
+Mobil 2: $20.000, 30 mil/galon 
+Berikut adalah perhitungan biaya mobil pertama:
+konsumsi bahan bakar tahunan = jarak tempuh tahunan / efisiensi bahan bakar = 15000 / 50 = 300 
+biaya bahan bakar tahunan = harga per galon x konsumsi bahan bakar tahunan = 4 x 300 = 1200 
+biaya operasi = 10 x biaya bahan bakar tahunan = 10 x 1200 = 12000 
+total biaya = harga pembelian + biaya operasi = 25000 + 12000 = 37000 
+```
+Mobil 1: $25.000, 50 mil/galon 
+Mobil 2: $20.000, 30 mil/galon 
+Berikut adalah perhitungan biaya mobil pertama:
+konsumsi bahan bakar tahunan = jarak tempuh tahunan / efisiensi bahan bakar = 15000 / 50 = 300 
+biaya bahan bakar tahunan = harga per galon x konsumsi bahan bakar tahunan = 4 x 300 = 1200 
+biaya operasi = 10 x biaya bahan bakar tahunan = 10 x 1200 = 12000 
+total biaya = harga pembelian + biaya operasi = 25000 + 12000 = 37000 
+```
+
+<p align="justify">Demikian pula, total biaya untuk mobil kedua adalah $ 40.000. Oleh karena itu, keluaran dari algoritma adalah memilih mobil 1.</p>
+
+<p align="justify">Contoh Kerja berikut menunjukkan bagaimana menggunakan konsep-konsep dalam bab ini dan langkah-langkah dalam Cara untuk memecahkan masalah lain. Dalam hal ini, Anda akan melihat bagaimana mengembangkan algoritme untuk meletakkan ubin dalam pola warna yang bergantian. Anda harus membaca Contoh yang Dikerjakan untuk meninjau apa yang telah Anda pelajari, dan untuk bantuan dalam mengatasi masalah lain.</p>
+
+<p align="justify">Di bab-bab selanjutnya, contoh yang dikerjakan ditunjukkan dengan deskripsi singkat tentang masalah yang ditangani dalam contoh, ditambah pengingat untuk melihatnya di eTeks Anda atau mengunduhnya dari situs web pendamping buku di www.wiley.com/go/bjeo7. Anda akan menemukan kode apa pun yang terkait dengan Contoh yang Dikerjakan yang disertakan dengan kode pendamping buku untuk bab ini. Saat Anda melihat deskripsi Contoh yang Dikerjakan, buka contoh dan lihat dan jalankan kode untuk mempelajari bagaimana masalah tersebut diselesaikan.</p>
